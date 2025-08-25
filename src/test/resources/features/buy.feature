@@ -25,4 +25,5 @@ Scenario: Buy multiple products
 
 Scenario: Buy insufficient products
     When I buy "Chip" with quantity 30
-    Then total should be 600.00
+    Then the error message should be "Not enough stock for product: Chip"
+    And "Chip" stock should be 20
