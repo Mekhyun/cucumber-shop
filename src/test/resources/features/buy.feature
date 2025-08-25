@@ -17,8 +17,12 @@ Scenario: Buy multiple products
     And I buy "Jam" with quantity 1
     Then total should be 121.00
 
-    Scenario: Buy multiple products
-        When I buy "Bread" with quantity 2
-        And I buy "Jam" with quantity 1
-        And I buy "Chip" with quantity 1
-        Then total should be 141.00
+Scenario: Buy multiple products
+    When I buy "Bread" with quantity 2
+    And I buy "Jam" with quantity 1
+    And I buy "Chip" with quantity 1
+    Then total should be 141.00
+
+Scenario: Buy insufficient products
+    When I buy "Chip" with quantity 30
+    Then total should be 600.00
