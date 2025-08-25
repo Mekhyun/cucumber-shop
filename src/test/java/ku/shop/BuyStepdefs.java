@@ -23,7 +23,7 @@ public class BuyStepdefs {
     }
 
     @When("I buy {string} with quantity {int}")
-    public void i_buy_with_quantity(String name, int quantity) {
+    public void i_buy_with_quantity(String name, int quantity) throws OutOfStockException {
         Product prod = catalog.getProduct(name);
         order.addItem(prod, quantity);
     }
